@@ -26,7 +26,6 @@ const store = new Vuex.Store({
     },
     changeRow(state, payload) {
       const index = state.tableData.findIndex(item => item.id == state.editingId);
-      console.log(state.tableData[index]);
       if (state.editingId) {
         if (payload.name) state.tableData[index].name = payload.name;
         if (payload.description) state.tableData[index].description = payload.description;
@@ -75,7 +74,11 @@ const store = new Vuex.Store({
   },
   getters: {
     getTable: state => state.tableData,
-    getId: state => state.editingId
+    getId: state => state.editingId,
+    getById: state => {
+      const index = state.tableData.findIndex(item => item.id == state.editingId);
+      return state.tableData[index];
+    }
   }
 })
 
