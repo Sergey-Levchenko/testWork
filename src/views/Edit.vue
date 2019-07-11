@@ -14,7 +14,7 @@
       <el-input type="textarea" v-model="formData.description"></el-input>
     </el-form-item>
     <el-button type="success" @click="changeRow(formData)">Change</el-button>
-    <el-button @click="$router.push('/')">Back</el-button>
+    <el-button @click="back">Back</el-button>
   </el-form>
 </template>
 <script>
@@ -65,6 +65,10 @@ export default {
           return false;
         }
       });
+    },
+    back(){
+      this.$store.dispatch("resetEditingId");
+      this.$router.push('/');
     }
   },
   mounted() {
