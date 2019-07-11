@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <router-link to="/about">About</router-link> -->
-
     <div class="container">
       <el-main :style="{maxWidth:'1000px'}">
         <router-view />
