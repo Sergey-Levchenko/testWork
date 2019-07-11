@@ -70,7 +70,7 @@ const store = new Vuex.Store({
       commit("addEditingId", payload)
     },
     resetEditingId({ commit }) {
-      commit("resetEditingId", payload)
+      commit("resetEditingId")
     },
   },
   getters: {
